@@ -22,7 +22,7 @@ async function inicializar() {
         });
 
         // Carrega o Modelo do TensorFlow.js
-        modelo = await tf.loadLayersModel('modelo/model.json');
+        modelo = await tf.loadGraphModel('modelo/model.json');
 
         // Ativa os campos de texto
         statusSpan.innerText = "🟢 Pronto";
@@ -65,7 +65,7 @@ async function gerarResposta(prompt) {
         const inputTensor = tf.tensor2d([inputIds], [1, MAX_LEN], 'int32');
         
         // Roda a previsão
-        const predicoes = modelo.predict(inputTensor);
+        const predicoes = modelo.execute(inputTensor);
         
         // Pega as probabilidades do ÚLTIMO token da sequência
         const dadosPredicao = await predicoes.data();
