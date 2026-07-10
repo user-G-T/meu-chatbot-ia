@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Chatbot IA Local</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>🤖 IA Local (Transformer)</h2>
+            <span id="status">🔄 Carregando modelo...</span>
+        </div>
+        <div class="chat-box" id="chatBox">
+            <div class="message bot-message">Olá! Como posso ajudar você hoje?</div>
+        </div>
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Digite sua mensagem..." disabled>
+            <button id="sendBtn" disabled>Enviar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
